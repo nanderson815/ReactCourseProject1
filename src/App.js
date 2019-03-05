@@ -49,7 +49,7 @@ class App extends Component {
       backgroundColor: "green",
       color: "white",
       font: 'inherit',
-      border: '1px solid blue',
+      border: '1px solid green',
       padding: '8px',
       cursor: 'pointer'
     };
@@ -71,6 +71,7 @@ class App extends Component {
       );
 
       style.backgroundColor = 'red';
+      style.border = '1px solid red';
     }
 
     const classes = [];
