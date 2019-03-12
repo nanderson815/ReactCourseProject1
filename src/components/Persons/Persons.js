@@ -7,18 +7,20 @@ class Persons extends Component {
 	// 	return state;
 	// }
 
-	shouldComponentUpdate(nextProps, nextState){
+	shouldComponentUpdate(nextProps, nextState) {
 		console.log("[Persons.js] shouldComponentUpdate");
-		if (nextProps.persons !== this.props.persons){
+		if (nextProps.persons !== this.props.persons ||
+			nextProps.changed !== this.props.changed ||
+			nextProps.clicked !== this.props.clicked) {
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	getSnapshotBeforeUpdate(previosProps, previousState){
+	getSnapshotBeforeUpdate(previosProps, previousState) {
 		console.log('[Persons.js] getSnapshotBeforeUpdate');
-		return {message: 'Snapshot!'};
+		return { message: 'Snapshot!' };
 	}
 
 	componentDidUpdate(prevProps, prevState, snapshot) {
@@ -26,7 +28,7 @@ class Persons extends Component {
 		console.log(snapshot);
 	}
 
-	componentWillUnmount(){
+	componentWillUnmount() {
 		console.log('[Persons.js] componentWillUnmount');
 	}
 
